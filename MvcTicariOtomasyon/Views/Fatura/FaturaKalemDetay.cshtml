@@ -1,0 +1,52 @@
+﻿
+@using MvcTicariOtomasyon.Models.Sınıflar
+@model List<FaturaKalem>
+
+@{
+    ViewBag.Title = "FaturaKalemDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<table class="table table-condensed" style="margin-top:20px;">
+
+    <tr>
+        <th>Fatura Kalem ID</th>
+        <th>Açıklama</th>
+        <th>Miktar</th>
+        <th>Birim Fiyat</th>
+        <th>Tutar</th>
+        <th>Fatura ID</th>
+        
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.FaturaKalemID</td>
+            <td>@item.Acıklama</td>
+            <td>@item.Miktar</td>
+            <td>@item.BirimFiyat</td>
+            <td>@item.Tutar</td>
+            <td>@item.Faturaid</td>
+                      
+        </tr>
+
+    }
+
+</table>
+<a href="/Fatura/Index/" class="btn btn-primary">Fatura Sayfasına Git</a>
+
+
+
+
+
+
+
+
+
+
+
+
+

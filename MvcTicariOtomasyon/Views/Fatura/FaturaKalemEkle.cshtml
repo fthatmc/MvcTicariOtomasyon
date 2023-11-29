@@ -1,0 +1,39 @@
+﻿@model MvcTicariOtomasyon.Models.Sınıflar.FaturaKalem
+
+@{
+    ViewBag.Title = "FaturaKalemEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Fatura Kalem Ekleme Sayfası</h2>
+<br />
+
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.Acıklama)
+    @Html.TextBoxFor(x => x.Acıklama, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Miktar)
+    @Html.TextBoxFor(x => x.Miktar, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BirimFiyat)
+    @Html.TextBoxFor(x => x.BirimFiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tutar)
+    @Html.TextBoxFor(x => x.Tutar, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Faturaid)
+    @Html.DropDownListFor(x => x.Faturaid, (List<SelectListItem>)ViewBag.Deger1, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Kaydet</button>
+</form>
+
+
+
+
+
+
+

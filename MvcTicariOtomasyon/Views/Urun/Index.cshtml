@@ -1,0 +1,71 @@
+﻿@using MvcTicariOtomasyon.Models.Sınıflar
+@model List<Urun>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("Index", "Urun", FormMethod.Get))
+            {
+                <p>
+                    Ürün Adı:  @Html.TextBox("p")
+                    <input type="submit" value="Ara" />
+                </p>
+            }
+<br />
+
+<body>
+    <main>
+        <table class="table table-bordered" style="margin-top:20px;">
+
+            <tr>
+                
+                <th>Ürün</th>
+                <th>Marka</th>
+                <th>Stok</th>
+                <th>Alış Fiyatı ₺</th>
+                <th>Satış Fiyatı ₺</th>
+                <th>Kategori</th>
+                <th>İşlem Yap</th>
+                <th>Satış Yap</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    
+                    <td>@item.UrunAd</td>
+                    <td>@item.Marka</td>
+                    <td>@item.Stok</td>
+                    <td>@item.AlisFiyat</td>
+                    <td>@item.SatisFiyat</td>
+                    <td>@item.Kategori.KategoriAd</td>
+                   
+                    <td>
+                        <a class="btn btn-info btn-sm" href="/Urun/UrunBul/@item.UrunID">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            Düzenle
+                        </a>
+                        <a class="btn btn-danger btn-sm" href="/Urun/UrunSil/@item.UrunID">
+                            <i class="fas fa-trash">
+                            </i>
+                            Sil
+                        </a>
+
+                    </td>
+                    <td>
+                        <a class="btn btn-default" style="background-color:#22cfd1" href="/Urun/SatisYap/@item.UrunID">
+                            Satış Yap
+                        </a>
+                    </td>
+                </tr>
+
+            }
+
+        </table>
+        <a href="/Urun/UrunEkle/" class="btn btn-primary">Yeni Ürün Ekle</a>
+    </main>
+</body>
+

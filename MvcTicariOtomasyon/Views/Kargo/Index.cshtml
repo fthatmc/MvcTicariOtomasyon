@@ -1,0 +1,63 @@
+﻿@using MvcTicariOtomasyon.Models.Sınıflar
+@model List<KargoDetay>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("Index", "Kargo", FormMethod.Get))
+{
+    <p>
+        Kargo Takip Kodu:  @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </p>
+}
+
+
+<table class="table table-bordered" style="margin-top:20px;">
+
+    <tr>
+
+        <th>Personel</th>
+        <th>Alıcı</th>
+        <th>Takip Kodu</th>
+        <th>Tarih</th>
+        <th>Detay</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.Personel</td>
+            <td>@item.Alici</td>
+            <td>@item.TakipKodu</td>
+            <td>@item.Tarih</td>
+            <td>
+                <a class="btn btn-info btn-sm" href="/Kargo/KargoTakip/@item.TakipKodu"> 
+                    @*normalde id'ye göre arama silme vs yapılırdı controller'da kargotakip
+                    actionresult'unu string p diye tanımladık p de takip koduna göre bulacak
+                    bu yüzden id değil takip koduna göre getirecek*@
+                    <i class="fas fa-pencil-alt">
+                    </i>
+                    Detay
+                </a>
+            </td>
+        </tr>
+
+    }
+
+</table>
+<a href="/Kargo/YeniKargo/" class="btn btn-primary">Yeni Kargo Ekle</a>
+
+
+
+
+
+
+
+
+
+
+

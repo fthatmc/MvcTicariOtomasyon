@@ -1,0 +1,56 @@
+﻿@using MvcTicariOtomasyon.Models.Sınıflar
+@model List<Brans>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<table class="table table-bordered" style="margin-top:20px;">
+
+    <tr>
+        <th>ID</th>
+        <th>Branş</th>
+        <th>İşlem Yap</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.BransID</td>
+            <td>@item.BransAd</td>
+            <td>
+                <a class="btn btn-info btn-sm" href="/Brans/DepartmanGetır/@item.BransID">
+                    <i class="fas fa-pencil-alt">
+                    </i>
+                    Düzenle
+                </a>
+                <a class="btn btn-danger btn-sm" href="/Brans/DepartmanSil/@item.BransID">
+                    <i class="fas fa-trash">
+                    </i>
+                    Sil
+                </a>
+                <a class="btn btn-warning btn-sm" href="/Brans/DepartmanDetay/@item.BransID">
+                    <i class="fas fa-trash">
+                    </i>
+                    Detay
+                </a>
+
+            </td>
+        </tr>
+
+    }
+
+</table>
+<a href="/Brans/DepartmanEkle/" class="btn btn-primary">Yeni Departman Ekle</a>
+
+
+
+
+
+
+
+
+

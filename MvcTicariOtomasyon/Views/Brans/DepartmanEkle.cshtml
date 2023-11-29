@@ -1,0 +1,19 @@
+﻿@model MvcTicariOtomasyon.Models.Sınıflar.Brans
+
+@{
+    ViewBag.Title = "DepartmanEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h3>Yeni Departman Ekleleme Sayfası</h3>
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.BransAd)
+    @Html.TextBoxFor(x => x.BransAd, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning">Kaydet</button>
+</form>
+
