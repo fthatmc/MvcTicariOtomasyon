@@ -1,3 +1,29 @@
+# MVC Ticari Otomasyon
+
+## Projejenin Amacı
+
+- Layout Kontrolü
+- Controller Yapısı
+- Partial View
+- Code First
+- Entity Framework
+- Model Yapısı
+- View Yapısı
+- Linq Sorguları
+- Entity Framework Sorguları
+- İlişkili Tablolar
+- Diyagramlar
+- Trigger Kullanımı
+- Prosedür Oluşturma
+- Hazır Template Kurulumu ve Düzenlenmesi
+- CSS Kontrolleri
+- Bootstrap Yapısı
+- Dinamik Web Projeleri Oluşturma
+- Dashboard yapısı
+- Chart
+- Widget Cards kullanımları
+
+  
 ## Projeye Ait Bazı Görseller
 
 ![1](https://github.com/fthatmc/MvcTicariOtomasyon/assets/136472585/43cb1b9b-4524-48d9-b5c1-f6df7baa45aa)
